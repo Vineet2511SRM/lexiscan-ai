@@ -98,14 +98,14 @@ export default function Assist() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setLocation("/dashboard")}
-              className="px-3 py-1.5 text-sm font-medium text-muted-foreground border border-border rounded-md hover:bg-accent hover:text-foreground transition-colors"
+              className="interactive-button interactive-button-secondary rounded-md border border-border bg-white px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
               data-testid="button-mode-dashboard"
             >
               Dashboard Mode
             </button>
             <button
               onClick={() => setLocation("/assist")}
-              className="px-3 py-1.5 text-sm font-medium bg-primary text-primary-foreground rounded-md"
+              className="interactive-button interactive-button-primary rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground"
               data-testid="button-mode-assist"
             >
               Assist Mode
@@ -115,7 +115,7 @@ export default function Assist() {
       </div>
 
       <div className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-6">
-        <div className="bg-white border border-border rounded-lg shadow-[var(--shadow-xs)] flex flex-col" style={{ height: "calc(100vh - 220px)", minHeight: "480px" }}>
+        <div className="interactive-surface interactive-panel flex flex-col rounded-lg border border-border bg-white shadow-[var(--shadow-xs)]" style={{ height: "calc(100vh - 220px)", minHeight: "480px" }}>
           <div className="px-4 py-3 border-b border-border flex-shrink-0">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
@@ -183,7 +183,7 @@ export default function Assist() {
                 <button
                   key={prompt}
                   onClick={() => sendMessage(prompt)}
-                  className="px-3 py-1.5 text-xs font-medium rounded-md bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-accent transition-colors"
+                  className="interactive-chip rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
                   data-testid={`button-prompt-${prompt.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {prompt}
@@ -205,7 +205,7 @@ export default function Assist() {
               <button
                 onClick={() => sendMessage(input)}
                 disabled={!input.trim() || isTyping}
-                className="p-2.5 bg-primary text-primary-foreground rounded-md hover:opacity-90 disabled:opacity-50 transition-opacity flex-shrink-0"
+                className="interactive-button interactive-button-primary flex-shrink-0 rounded-md bg-primary p-2.5 text-primary-foreground disabled:opacity-50"
                 data-testid="button-assist-send"
               >
                 <Send className="w-4 h-4" />

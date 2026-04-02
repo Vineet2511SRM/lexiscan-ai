@@ -121,14 +121,14 @@ export default function Dashboard() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setLocation("/dashboard")}
-              className="px-3 py-1.5 text-sm font-medium bg-primary text-primary-foreground rounded-md"
+              className="interactive-button interactive-button-primary rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground"
               data-testid="button-mode-dashboard"
             >
               Dashboard Mode
             </button>
             <button
               onClick={() => setLocation("/assist")}
-              className="px-3 py-1.5 text-sm font-medium text-muted-foreground border border-border rounded-md hover:bg-accent hover:text-foreground transition-colors"
+              className="interactive-button interactive-button-secondary rounded-md border border-border bg-white px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
               data-testid="button-mode-assist"
             >
               Assist Mode
@@ -138,7 +138,7 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           <div className="lg:col-span-3" data-testid="panel-document">
-            <div className="bg-white border border-border rounded-lg shadow-[var(--shadow-xs)] overflow-hidden">
+            <div className="interactive-surface interactive-panel overflow-hidden rounded-lg border border-border bg-white shadow-[var(--shadow-xs)]">
               <div className="px-4 py-3 border-b border-border">
                 <h2 className="text-sm font-semibold text-foreground">Document Text</h2>
               </div>
@@ -151,7 +151,7 @@ export default function Dashboard() {
           </div>
 
           <div className="lg:col-span-2" data-testid="panel-analysis">
-            <div className="bg-white border border-border rounded-lg shadow-[var(--shadow-xs)] overflow-hidden">
+            <div className="interactive-surface interactive-panel overflow-hidden rounded-lg border border-border bg-white shadow-[var(--shadow-xs)]">
               <div className="px-4 py-3 border-b border-border">
                 <h2 className="text-sm font-semibold text-foreground">Clause Analysis</h2>
               </div>
@@ -162,10 +162,10 @@ export default function Dashboard() {
                     <button
                       key={key}
                       onClick={() => setFilter(key)}
-                      className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+                      className={`interactive-chip px-3 py-1 text-xs font-medium rounded-md ${
                         filter === key
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-card border border-border text-muted-foreground hover:text-foreground hover:bg-accent"
+                          ? "bg-primary text-primary-foreground shadow-[var(--shadow-2xs)]"
+                          : "bg-card border border-border text-muted-foreground hover:text-foreground"
                       }`}
                       data-testid={`button-filter-${key}`}
                     >

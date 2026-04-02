@@ -42,7 +42,7 @@ export default function RiskCard({ card }: RiskCardProps) {
 
   return (
     <div
-      className="bg-white border border-border rounded-lg p-4 space-y-3 shadow-[var(--shadow-2xs)] hover:shadow-[var(--shadow-xs)] transition-shadow"
+      className="interactive-surface interactive-card space-y-3 rounded-lg border border-border bg-white p-4 shadow-[var(--shadow-2xs)]"
       data-testid={`card-risk-${card.id}`}
     >
       <div className="flex items-start justify-between gap-3">
@@ -66,7 +66,7 @@ export default function RiskCard({ card }: RiskCardProps) {
 
       <button
         onClick={() => setExpanded(!expanded)}
-        className="flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+        className="interactive-link flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80"
         data-testid={`button-why-${card.id}`}
       >
         {expanded ? (

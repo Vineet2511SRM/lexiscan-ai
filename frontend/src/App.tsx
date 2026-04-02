@@ -33,7 +33,7 @@ function AppRoutes() {
 
       <button
         onClick={() => setChatOpen(true)}
-        className="fixed bottom-6 right-6 w-12 h-12 bg-primary text-primary-foreground rounded-full shadow-[var(--shadow-lg)] flex items-center justify-center hover:opacity-90 transition-opacity z-40"
+        className="interactive-button interactive-button-primary fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-lg)]"
         data-testid="button-floating-chat"
         aria-label="Open Legal Assistant"
       >

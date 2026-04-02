@@ -17,7 +17,7 @@ export default function Landing() {
           <div className="mt-8 flex flex-wrap gap-3">
             <button
               onClick={() => setLocation("/upload")}
-              className="flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
+              className="interactive-button interactive-button-primary flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
               data-testid="button-hero-upload"
             >
               <Upload className="w-4 h-4" />
@@ -25,7 +25,7 @@ export default function Landing() {
             </button>
             <button
               onClick={() => setLocation("/dashboard")}
-              className="flex items-center gap-2 px-5 py-2.5 border border-border text-foreground text-sm font-medium rounded-md hover:bg-accent transition-colors"
+              className="interactive-button interactive-button-secondary flex items-center gap-2 rounded-md border border-border bg-white px-5 py-2.5 text-sm font-medium text-foreground"
               data-testid="button-hero-dashboard"
             >
               View Dashboard
@@ -38,8 +38,8 @@ export default function Landing() {
       <section className="bg-card border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white border border-border rounded-lg p-6 shadow-[var(--shadow-xs)]" data-testid="card-feature-clause">
-              <div className="w-10 h-10 rounded-md bg-primary/8 flex items-center justify-center mb-4">
+            <div className="interactive-surface interactive-card bg-white border border-border rounded-lg p-6 shadow-[var(--shadow-xs)]" data-testid="card-feature-clause">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-primary/8">
                 <FileText className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-base font-semibold text-foreground mb-2">Clause Classification</h3>
@@ -48,8 +48,8 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="bg-white border border-border rounded-lg p-6 shadow-[var(--shadow-xs)]" data-testid="card-feature-risk">
-              <div className="w-10 h-10 rounded-md bg-primary/8 flex items-center justify-center mb-4">
+            <div className="interactive-surface interactive-card bg-white border border-border rounded-lg p-6 shadow-[var(--shadow-xs)]" data-testid="card-feature-risk">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-primary/8">
                 <ShieldAlert className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-base font-semibold text-foreground mb-2">Risk Detection</h3>
@@ -58,8 +58,8 @@ export default function Landing() {
               </p>
             </div>
 
-            <div className="bg-white border border-border rounded-lg p-6 shadow-[var(--shadow-xs)]" data-testid="card-feature-ai">
-              <div className="w-10 h-10 rounded-md bg-primary/8 flex items-center justify-center mb-4">
+            <div className="interactive-surface interactive-card bg-white border border-border rounded-lg p-6 shadow-[var(--shadow-xs)]" data-testid="card-feature-ai">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-primary/8">
                 <Lightbulb className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-base font-semibold text-foreground mb-2">AI Explanation</h3>
@@ -75,10 +75,10 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-sm font-semibold text-foreground">LexiScan</span>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid="link-privacy">
+            <a href="#" className="interactive-link text-sm text-muted-foreground hover:text-foreground" data-testid="link-privacy">
               Privacy
             </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid="link-terms">
+            <a href="#" className="interactive-link text-sm text-muted-foreground hover:text-foreground" data-testid="link-terms">
               Terms
             </a>
           </div>

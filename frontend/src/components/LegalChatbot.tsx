@@ -107,7 +107,7 @@ export default function LegalChatbot({ isOpen, onClose }: LegalChatbotProps) {
         </div>
         <button
           onClick={onClose}
-          className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+          className="interactive-icon rounded-md border border-transparent p-1.5 text-muted-foreground hover:text-foreground hover:bg-accent"
           data-testid="button-close-chatbot"
         >
           <X className="w-4 h-4" />
@@ -168,7 +168,7 @@ export default function LegalChatbot({ isOpen, onClose }: LegalChatbotProps) {
             <button
               key={prompt}
               onClick={() => sendMessage(prompt)}
-              className="px-3 py-1.5 text-xs font-medium rounded-md bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-accent transition-colors"
+              className="interactive-chip rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
               data-testid={`button-quick-prompt-${prompt.toLowerCase().replace(/\s+/g, "-")}`}
             >
               {prompt}
@@ -190,7 +190,7 @@ export default function LegalChatbot({ isOpen, onClose }: LegalChatbotProps) {
           <button
             onClick={() => sendMessage(input)}
             disabled={!input.trim() || isTyping}
-            className="p-2 bg-primary text-primary-foreground rounded-md hover:opacity-90 disabled:opacity-50 transition-opacity flex-shrink-0"
+            className="interactive-button interactive-button-primary flex-shrink-0 rounded-md bg-primary p-2 text-primary-foreground disabled:opacity-50"
             data-testid="button-chatbot-send"
           >
             <Send className="w-4 h-4" />

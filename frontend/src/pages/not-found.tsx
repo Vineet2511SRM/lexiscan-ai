@@ -13,7 +13,7 @@ export default function NotFound() {
         </p>
         <button
           onClick={() => setLocation("/")}
-          className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
+          className="interactive-button interactive-button-primary rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
           data-testid="button-go-home"
         >
           Return Home

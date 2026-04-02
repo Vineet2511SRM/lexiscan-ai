@@ -25,10 +25,10 @@ export default function Navbar({ onUploadClick }: NavbarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-border" data-testid="navbar">
+    <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-white/90 backdrop-blur-sm" data-testid="navbar">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
-          <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
+          <Link href="/" className="flex items-center gap-2 interactive-link" data-testid="link-logo">
             <span className="text-lg font-semibold tracking-tight text-primary">LexiScan</span>
           </Link>
 
@@ -37,9 +37,9 @@ export default function Navbar({ onUploadClick }: NavbarProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                className={`interactive-link px-3 py-1.5 rounded-md text-sm font-medium ${
                   location === link.href
-                    ? "bg-accent text-foreground"
+                    ? "bg-accent text-foreground shadow-[var(--shadow-2xs)]"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"
                 }`}
                 data-testid={`link-nav-${link.label.toLowerCase()}`}
@@ -52,7 +52,7 @@ export default function Navbar({ onUploadClick }: NavbarProps) {
           <div className="flex items-center gap-3">
             <button
               onClick={handleUploadClick}
-              className="hidden md:flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
+              className="interactive-button interactive-button-primary hidden md:flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md"
               data-testid="button-upload-document"
             >
               <Upload className="w-4 h-4" />
@@ -60,7 +60,7 @@ export default function Navbar({ onUploadClick }: NavbarProps) {
             </button>
 
             <button
-              className="md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+              className="interactive-icon md:hidden rounded-md border border-transparent p-2 text-muted-foreground hover:text-foreground hover:bg-accent"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               data-testid="button-mobile-menu"
             >
@@ -77,9 +77,9 @@ export default function Navbar({ onUploadClick }: NavbarProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`interactive-link block px-3 py-2 rounded-md text-sm font-medium ${
                   location === link.href
-                    ? "bg-accent text-foreground"
+                    ? "bg-accent text-foreground shadow-[var(--shadow-2xs)]"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
@@ -90,7 +90,7 @@ export default function Navbar({ onUploadClick }: NavbarProps) {
             ))}
             <button
               onClick={() => { handleUploadClick(); setMobileMenuOpen(false); }}
-              className="w-full flex items-center gap-2 px-3 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity mt-2"
+              className="interactive-button interactive-button-primary mt-2 flex w-full items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground"
               data-testid="button-mobile-upload"
             >
               <Upload className="w-4 h-4" />

@@ -83,7 +83,7 @@ export default function Upload() {
           </p>
         </div>
 
-        <div className="bg-white border border-border rounded-lg p-6 shadow-[var(--shadow-sm)]">
+        <div className="interactive-surface interactive-panel rounded-lg border border-border bg-white p-6 shadow-[var(--shadow-sm)]">
           {!isProcessing ? (
             <>
               <div
@@ -91,12 +91,12 @@ export default function Upload() {
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
-                className={`relative rounded-lg border-2 border-dashed p-10 text-center transition-colors cursor-pointer ${
+                className={`interactive-surface relative rounded-lg border-2 border-dashed p-10 text-center cursor-pointer ${
                   isDragging
-                    ? "border-primary bg-primary/5"
+                    ? "border-primary bg-primary/5 shadow-[var(--shadow-md)]"
                     : file
-                    ? "border-border bg-card cursor-default"
-                    : "border-border hover:border-primary/50 hover:bg-accent"
+                      ? "border-border bg-card cursor-default"
+                    : "border-border bg-white hover:border-primary/50 hover:bg-accent"
                 }`}
                 data-testid="dropzone"
               >
@@ -142,7 +142,7 @@ export default function Upload() {
                 <button
                   onClick={handleUpload}
                   disabled={!file}
-                  className="flex-1 px-4 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+                  className="interactive-button interactive-button-primary flex-1 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50"
                   data-testid="button-upload-file"
                 >
                   Upload File
@@ -150,7 +150,7 @@ export default function Upload() {
                 {file && (
                   <button
                     onClick={handleClear}
-                    className="flex items-center gap-1.5 px-4 py-2.5 border border-border text-sm font-medium text-foreground rounded-md hover:bg-accent transition-colors"
+                    className="interactive-button interactive-button-secondary flex items-center gap-1.5 rounded-md border border-border bg-white px-4 py-2.5 text-sm font-medium text-foreground"
                     data-testid="button-clear-file"
                   >
                     <X className="w-4 h-4" />
