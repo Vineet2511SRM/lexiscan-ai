@@ -19,7 +19,7 @@ function AppRoutes() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar onUploadClick={() => {}} />
+      <Navbar />
 
       <main>
         <Switch>
